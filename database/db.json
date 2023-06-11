@@ -1,0 +1,32 @@
+{
+  "user": [
+    {
+      "name": "werty",
+      "email": "sandesh@gmail.com",
+      "contact": "3456",
+      "address": "dfgh",
+      "id": 10
+    },
+    {
+      "name": "meera",
+      "email": "meera@gmail.com",
+      "contact": "3456",
+      "address": "dfg",
+      "id": 11
+    },
+    {
+      "name": "asd",
+      "email": "shaheedaliib24@gmail.com",
+      "contact": "23456",
+      "address": "dfg",
+      "id": 12
+    },
+    {
+      "name": "rohithnayak",
+      "email": "rohith.ramakrishna02@gmail.com",
+      "contact": "4444444",
+      "address": "tttttt",
+      "id": 13
+    }
+  ]
+}
