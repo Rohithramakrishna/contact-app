@@ -14,14 +14,12 @@ const ContextApi = ({ children }) => {
     window.location.assign("/");
   };
 
-
   useEffect(() => {
-    
     const authEffect = onAuthStateChanged(auth, userInfo => {
-      console.log(userInfo)
+      console.log(userInfo);
       if (userInfo && userInfo.emailVerified && !userInfo.isAnonymous) {
         setIsLoading(true);
-        setAuthUser(userInfo.emailVerified);
+        setAuthUser(userInfo.emailVerified && userInfo);
         const token = userInfo.accessToken;
         window.sessionStorage.setItem("token", token);
       } else {
@@ -30,8 +28,6 @@ const ContextApi = ({ children }) => {
       }
       setIsLoading(false);
     });
-
-   
   }, []);
 
   return (

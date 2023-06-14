@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { auth } from "../apis/Firebase";
 import { signInWithEmailAndPassword } from "@firebase/auth";
-
+console.log(auth)
 const Login = () => {
   let navigate = useNavigate();
   let [toggle, setToggle] = useState(false);

@@ -3,12 +3,17 @@ import Styles from "./-Navbar.module.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./../apis/ContextApi";
 
+
 const Auth = () => {
   let { authUser, isLoading, logOut } = useContext(AuthContext);
 console.log(authUser)
   let AuthenticatedUser = () => {
     return (
       <div className={Styles.logoutBlock}>
+        <Link to="/todo-list">
+          <button className={Styles.nameBtn}>{`welcome ${authUser.displayName}`}</button>
+        </Link>
+
         <button className={Styles.logoutBtn} onClick={logOut}>
           logout
         </button>

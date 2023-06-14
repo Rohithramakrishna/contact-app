@@ -7,6 +7,7 @@ import { auth } from "../apis/Firebase";
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
+  updateProfile,
 } from "firebase/auth";
 
 const Register = () => {
@@ -32,30 +33,33 @@ const Register = () => {
         setState({ isLoading: true });
         let userData = await createUserWithEmailAndPassword(
           auth,
+          
+
           email,
           password
         );
+
         sendEmailVerification(userData.user);
+        console.log(userData);
         let message = `Email verification  has been sent to ${email} address please verify...`;
-        // updateProfile(userData.user, {
-        //   displayName: username,
-        //   photoURL: `https://www.gravatar.com/avatar/${md5(
-        //     email
-        //   )}?q=identicon`,
-        // });
+         updateProfile(userData.user, {
+          displayName: username,
+         
+        });
+
         toast.success(message);
         navigate("/login");
       }
     } catch (error) {
       toast.error(error.code);
-      }
-       setState({
-         username: "",
-         email: "",
-         password: "",
-         confirmpassword: "",
-         isLoading: false,
-       });
+    }
+    setState({
+      username: "",
+      email: "",
+      password: "",
+      confirmpassword: "",
+      isLoading: false,
+    });
   };
   return (
     <section id={Styles.authBlock}>
